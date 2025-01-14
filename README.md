@@ -1,32 +1,76 @@
-# Fluid-dynamics-using-machine-learning
-# Video Frame Extractor
+### Data-Driven Fluid Mechanics Project
 
-This Python script extracts frames from a video file at regular intervals and saves them as individual image files. It utilizes OpenCV library for video processing.
+This repository contains a Python project that leverages image processing and Proper Orthogonal Decomposition (POD) to analyze fluid dynamics from video data. The project encompasses steps for extracting frames, adding noise, applying noise reduction techniques, and analyzing fluid flow using POD.
 
-## Prerequisites
+---
 
-- Python 3.x
-- OpenCV (cv2) library
+### Project Overview
 
-## Installation
+The goal of this project is to derive meaningful insights from video frames of fluid dynamics experiments. The main objectives are:
 
-1. Clone this repository to your local machine:
+- Extracting frames from video data.
+- Simulating various experimental conditions by adding Gaussian and Speckle noise.
+- Applying noise reduction techniques such as Gaussian blur and Non-Local Means (NLM) denoising.
+- Analyzing fluid flow using Proper Orthogonal Decomposition (POD) to identify dominant flow modes.
 
+---
 
-2. Install OpenCV library if not already installed:
+### Installation and Setup
 
+#### Prerequisites
+Ensure you have Python 3.x installed along with the following Python libraries:
 
-## Usage
+- OpenCV
+- NumPy
+- Matplotlib
+- Scikit-learn
 
-1. Place the video file you want to extract frames from in the same directory as the script, or specify the path to the video file in the `input_video_path` variable.
+#### Installation Instructions
+Clone the repository to your local machine:
 
-2. Set the output directory where you want to save the extracted frames by modifying the `output_frames_dir` variable.
+```bash
+git clone https://github.com/sonalrajsr/Data-Driven-Fluid-Mechanics-Project.git
+```
 
-3. Run the script:
+---
 
+### Dataset
 
-## Functionality
+Access the dataset used in this project via the following link:
 
-The `extract_frames` function reads the input video file frame by frame. It extracts every fifth frame and saves it as a JPEG image in the specified output directory. You can adjust the frame extraction interval by modifying the condition `frame_count % 5 == 0` in the code.
+[Dataset Link](https://drive.google.com/file/d/1WiSbCQmxu9ugEideLkcdAof1GA0uYXXT/view)
 
-##  we caluculate the energy  of fluid of top 10 modes and then adding noise to it and follow the same steps again .
+#### Data Overview
+
+- **frames/**: Contains extracted frames from the original video.
+- **noise_x/**: Directories (e.g., noise_20, noise_40) containing frames with added noise.
+- **denoised_images_x/**: Contains frames after applying denoising techniques.
+
+---
+
+### Results
+
+This section summarizes the effects of noise addition, noise reduction, and POD analysis on the fluid dynamics images. Below are key findings and visualizations demonstrating the project’s effectiveness.
+
+#### Noise Addition Effects
+Gaussian and Speckle noise were added to simulate various conditions. Key observations:
+
+- **Gaussian Noise**: At levels of 20%, 40%, 60%, and 80%, images showed progressively obscured details and increased visual distortion.
+- **Speckle Noise**: Introduced a grainy texture, reducing clarity and obscuring finer details.
+
+#### Noise Reduction Techniques
+
+Two noise reduction methods were applied to noisy images:
+
+- **Gaussian Blur**: Reduced high-frequency noise effectively but caused a loss of edge details.
+- **Non-Local Means (NLM) Denoising**: Superior at preserving edges and fine details while effectively reducing noise.
+
+#### POD Analysis
+
+POD was used to identify dominant flow modes in original, noisy, and denoised images. Key insights include:
+
+- **Impact of Noise**: Noise significantly affected the accuracy of flow mode identification, introducing inconsistencies in lower energy modes.
+- **Recovery with Denoising**: Post-denoising, flow modes closely resembled those from clean images, validating the efficacy of noise reduction methods.
+
+---
+
