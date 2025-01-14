@@ -29,7 +29,7 @@ Ensure you have Python 3.x installed along with the following Python libraries:
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/sonalrajsr/Data-Driven-Fluid-Mechanics-Project.git
+git clone https://github.com/ANKIT131103/Fluid-dynamics-using-machine-learning.git
 ```
 
 ---
